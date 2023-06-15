@@ -8,10 +8,13 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     const navLinks = [
-        {id: 1,name: "My Crops", route: "/mycrops"},
-        {id: 2,name: "Farmer Profile", route: "/farmersprofile"},
+        {id: 1,name:"My Crops", route: "/mycrops"},
+        {id: 2,name:"Farmer Profile", route: "/farmersprofile"},
         {id: 3,name: "Login", route: "/farmerlogin"},
-        {id: 4,name: "Signup", route: "/farmersignup"}
+        {id: 4,name: "Signup", route: "/farmersignup"},
+        {id: 4,name: "My sales", route: "/mysales"},
+        {id: 4,name: "My records", route: "/myrecords"},
+        {id: 4,name: "Farm Sales", route: "/farmproduce"}
     ]
 
     return ( 
