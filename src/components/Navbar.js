@@ -12,9 +12,10 @@ const Navbar = () => {
         {id: 2,name:"Farmer Profile", route: "/farmersprofile"},
         {id: 3,name: "Login", route: "/farmerlogin"},
         {id: 4,name: "Signup", route: "/farmersignup"},
-        {id: 4,name: "My sales", route: "/mysales"},
-        {id: 4,name: "My records", route: "/myrecords"},
-        {id: 4,name: "Farm Sales", route: "/farmproduce"}
+        {id: 5,name: "My sales", route: "/mysales"},
+        {id: 6,name: "My records", route: "/myrecords"},
+        {id: 7,name: "Farm Sales", route: "/farmproduce"},
+        {id: 8,name: "Farming History", route: "/farminghistory"}
     ]
 
     return ( 
