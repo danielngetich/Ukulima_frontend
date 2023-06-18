@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  React,{ useState, useEffect } from 'react';
 
 const MyCrops = () => {
   const [showForm, setShowForm] = useState(false);
@@ -22,7 +22,7 @@ const MyCrops = () => {
 
   const fetchRawMaterials = async (crop) => {
     try {
-      const response = await fetch(`API_ENDPOINT/rawMaterials?crop=${crop}`);
+      const response = await fetch(`API_ENDPOINT/rawMaterials? crop=${crop}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -81,9 +81,12 @@ const MyCrops = () => {
               Crop:
               <select value={selectedCrop} onChange={handleCropSelection}>
                 <option value="">Select Crop</option>
-                <option value="crop1">Crop 1</option>
-                <option value="crop2">Crop 2</option>
-                <option value="crop3">Crop 3</option>
+                <option value="Maize">Maize</option>
+                <option value="Peas">Peas</option>
+                <option value="Potatoes">Potatoes</option>
+                <option value="Beans">Beans</option>
+                <option value="Cabbage">Cabbage</option>
+                <option value="Sorghum">Sorghum</option>
                 {/* Add more crop options as needed */}
               </select>
             </label>
