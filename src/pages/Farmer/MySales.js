@@ -41,7 +41,7 @@ const MySells = () => {
 
   return (
     <div>
-      <h2>My Sells</h2>
+      <h2>My Sales</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Image:
