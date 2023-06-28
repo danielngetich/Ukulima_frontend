@@ -72,35 +72,42 @@ const MyCrops = () => {
 
   return (
     <div>
-      <h2>My Crops</h2>
+      <h2 className='container-title'>My Crops</h2>
       {showForm ? (
         <form onSubmit={handleFormSubmit}>
           {/* Crop and Farm Size Section */}
           <div>
-            <label>
-              Crop:
-              <select value={selectedCrop} onChange={handleCropSelection}>
-                <option value="">Select Crop</option>
-                <option value="Maize">Maize</option>
-                <option value="Peas">Peas</option>
-                <option value="Potatoes">Potatoes</option>
-                <option value="Beans">Beans</option>
-                <option value="Cabbage">Cabbage</option>
-                <option value="Sorghum">Sorghum</option>
-                {/* Add more crop options as needed */}
-              </select>
-            </label>
-            <br />
-            <label>
-              Farm Size:
+            <div>
+              <label className='label'>
+                Crop:
+              </label>
+              <select 
+                value={selectedCrop} 
+                className='input input-success'
+                onChange={handleCropSelection}
+                >
+                  <option value="">Select Crop</option>
+                  <option value="Maize">Maize</option>
+                  <option value="Peas">Peas</option>
+                  <option value="Potatoes">Potatoes</option>
+                  <option value="Beans">Beans</option>
+                  <option value="Cabbage">Cabbage</option>
+                  <option value="Sorghum">Sorghum</option>
+                  {/* Add more crop options as needed */}
+                </select>
+            </div>
+            <div>
+              <label className='label'>
+                Farm Size:
+              </label>
               <input
-                type="text"
-                name="farmSize"
-                value={farmSize}
-                onChange={handleFarmSizeChange}
+                  type="text"
+                  name="farmSize"
+                  value={farmSize}
+                  className='input input-success'
+                  onChange={handleFarmSizeChange}
               />
-            </label>
-            <br />
+            </div>
           </div>
 
           {/* Raw Material Selection Section */}
@@ -109,23 +116,28 @@ const MyCrops = () => {
               <h3>Raw Material Selection</h3>
               {rawMaterials.map((material) => (
                 <div key={material.id}>
-                  <label>
+                  <div>
+                    <label className='label'>
+                      {material.name}
+                    </label>
                     <input
-                      type="checkbox"
-                      value={material.id}
-                      checked={selectedMaterials.includes(material.id)}
-                      onChange={(e) => handleMaterialSelection(e, material.id)}
-                    />
-                    {material.name}
-                  </label>
-                  <br />
+                        type="checkbox"
+                        className='input input-success'
+                        value={material.id}
+                        checked={selectedMaterials.includes(material.id)}
+                        onChange={(e) => handleMaterialSelection(e, material.id)}
+                      />
+                  </div>
                   {selectedMaterials.includes(material.id) && (
                     <div>
-                      <label>
+                      <label className='label'>
                         Cost:
-                        <input type="text" name={`cost-${material.id}`} />
                       </label>
-                      <br />
+                      <input 
+                        type="text" 
+                        name={`cost-${material.id}`} 
+                        className='input input-success'
+                      />
                     </div>
                   )}
                 </div>
@@ -134,10 +146,21 @@ const MyCrops = () => {
           )}
 
           <br />
-          <button type="submit">Save</button>
+          <button 
+            type="submit"
+            className='btn btn-success'
+            >
+              Save
+          </button>
         </form>
       ) : (
-        <button onClick={handleAddPlant}>+ Add Plant</button>
+        <button 
+          type='submit'
+          className='btn btn-success'
+          onClick={handleAddPlant}
+          >
+            + Add Plant
+        </button>
       )}
     </div>
   );

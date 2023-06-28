@@ -1,85 +1,3 @@
-// import React, { useState } from 'react';
-
-// const MyRecords = () => {
-//   const [category, setCategory] = useState('');
-//   const [date, setDate] = useState('');
-//   const [quantity, setQuantity] = useState('');
-//   const [cost, setCost] = useState('');
-
-//   const handleCategoryChange = (e) => {
-//     setCategory(e.target.value);
-//   };
-
-//   const handleDateChange = (e) => {
-//     setDate(e.target.value);
-//   };
-
-//   const handleQuantityChange = (e) => {
-//     setQuantity(e.target.value);
-//   };
-
-//   const handleCostChange = (e) => {
-//     setCost(e.target.value);
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Perform submission logic with category, date, quantity, and cost
-//     console.log({
-//       category,
-//       date,
-//       quantity,
-//       cost
-//     });
-//     // Reset form fields
-//     setCategory('');
-//     setDate('');
-//     setQuantity('');
-//     setCost('');
-//   };
-
-//   return (
-//     <div>
-//       <h2>My Records</h2>
-//       <form onSubmit={handleSubmit}>
-//         <label>
-//           Category:
-//           <select value={category} onChange={handleCategoryChange}>
-//             <option value="">Select Category</option>
-//             <option value="milk">Milk</option>
-//             <option value="tea">Tea</option>
-//             <option value="eggs">Eggs</option>
-//             {/* Add more category options as needed */}
-//           </select>
-//         </label>
-//         <br />
-//         <label>
-//           Date:
-//           <input type="date" value={date} onChange={handleDateChange} />
-//         </label>
-//         <br />
-//         <label>
-//           Quantity (kg/litres/trays):
-//           <input
-//             type="text"
-//             value={quantity}
-//             onChange={handleQuantityChange}
-//           />
-//         </label>
-//         <br />
-//         <label>
-//           Cost:
-//           <input type="text" value={cost} onChange={handleCostChange} />
-//         </label>
-//         <br />
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default MyRecords;
-
 import React, { useState } from 'react';
 
 const MyRecords = () => {
@@ -108,28 +26,55 @@ const MyRecords = () => {
 
   return (
     <div>
-      <h2>Production Cost</h2>
-      <label>
-        Fertilizer Cost:
-        <input type="number" value={fertilizerCost} onChange={handleFertilizerCostChange} />
-      </label>
-      <br />
-      <label>
-        Labour Cost:
-        <input type="number" value={labourCost} onChange={handleLabourCostChange} />
-      </label>
-      <br />
-      <label>
-        Seeds Cost:
-        <input type="number" value={seedsCost} onChange={handleSeedsCostChange} />
-      </label>
-      <br />
-      <label>
-        Chemicals Cost:
-        <input type="number" value={chemicalsCost} onChange={handleChemicalsCostChange} />
-      </label>
-      <br />
-      <p>Total Cost: {totalCost}</p>
+      <h2 className='container-title'>Production Cost</h2>
+      <div>
+        <label className='label'>
+          Fertilizer Cost:
+        </label>
+        <input 
+          type="number" 
+          className='input input-success'
+          value={fertilizerCost} 
+          onChange={handleFertilizerCostChange} 
+          />
+      </div>
+      <div>
+        <label className='label'>
+          Labour Cost:
+        </label>
+        <input 
+          type="number" 
+          className='input input-success'
+          value={labourCost} 
+          onChange={handleLabourCostChange} 
+          />
+      </div>
+      <div>
+        <label className='label'>
+          Seeds Cost:
+        </label>
+        <input 
+          type="number" 
+          className='input input-success'
+          value={seedsCost} 
+          onChange={handleSeedsCostChange} 
+          />
+      </div>
+      <div>
+        <label className='label'>
+          Chemicals Cost:
+        </label>
+        <input 
+          type="number" 
+          className='input input-success'
+          value={chemicalsCost} 
+          onChange={handleChemicalsCostChange} 
+          />
+      </div>
+      
+      <p className='content-title'>Total Cost: 
+        <span className='ml-1 text-success'>{totalCost}</span>
+      </p>
     </div>
   );
 };
