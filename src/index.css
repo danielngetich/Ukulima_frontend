@@ -1,3 +1,18 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+@layer components {
+    .container-title {
+        @apply font-semibold md:text-2xl text-xl text-gray-800
+    }
+
+    .content-title {
+        @apply font-medium md:text-lg mt-4 text-gray-700
+    }
+
+    .form-container {
+        @apply flex flex-col items-start space-y-4
+    }
+}

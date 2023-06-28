@@ -1,13 +1,3 @@
-// const Home = () => {
-//     return ( 
-//         <>
-//             Homepage here...
-//         </>
-//      );
-// }
- 
-// export default Home;
-
 import React, { useState } from 'react';
 
 const Home = ({ plantDuration, expectedHarvestDate, fertilizer, seeds, labour, chemicals }) => {
@@ -55,7 +45,12 @@ const Home = ({ plantDuration, expectedHarvestDate, fertilizer, seeds, labour, c
       )}
 
       {!issueReported && (
-        <button onClick={handleReportIssue}>Report Plant Issue</button>
+        <button 
+          className='btn btn-success'
+          onClick={handleReportIssue}
+        >
+          Report Plant Issue
+        </button>
       )}
       {issueReported && (
         <p>Plant issue reported to the extension officer</p>

@@ -1,54 +1,63 @@
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 
-// const FarmerLogin = () => {
-//   const [formData, setFormData] = useState({
-//     email: '',
-//     password: ''
-//   });
+const FarmerLogin = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
 
-//   const handleChange = (e) => {
-//     setFormData((prevFormData) => ({
-//       ...prevFormData,
-//       [e.target.name]: e.target.value
-//     }));
-//   };
+  const handleChange = (e) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value
+    }));
+  };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Perform login logic with formData
-//     console.log(formData);
-//     // Reset form
-//     setFormData({
-//       email: '',
-//       password: ''
-//     });
-//   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform login logic with formData
+    console.log(formData);
+    // Reset form
+    setFormData({
+      email: '',
+      password: ''
+    });
+  };
 
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label>
-//         Email:
-//         <input
-//           type="email"
-//           name="email"
-//           value={formData.email}
-//           onChange={handleChange}
-//         />
-//       </label>
-//       <br />
-//       <label>
-//         Password:
-//         <input
-//           type="password"
-//           name="password"
-//           value={formData.password}
-//           onChange={handleChange}
-//         />
-//       </label>
-//       <br />
-//       <button type="submit">Log In</button>
-//     </form>
-//   );
-// };
+  return (
+    <form onSubmit={handleSubmit} className='form-container'>
+        <div>
+            <label className='label'>
+                Email:
+            </label>
+            <input
+                type="email"
+                name="email"
+                className='input input-success'
+                value={formData.email}
+                onChange={handleChange}
+                />
+        </div>
+        <div>
+            <label className='label'>
+                Password:
+            </label>
+            <input
+                    className='input input-success'
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                />
+        </div>
+        <button
+            className='btn btn-success ' 
+            type="submit"
+            >
+                Log In
+        </button>
+    </form>
+  );
+};
 
-// export default FarmerLogin;
+export default FarmerLogin;

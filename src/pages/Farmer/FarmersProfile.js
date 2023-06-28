@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
 const FarmersProfile = () => {
-  const [profileData, setProfileData] = useState(null);
-
-  useEffect(() => {
-    fetchProfileData();
-  }, []);
+  const [profileData, setProfileData] = useState([]);
 
   const fetchProfileData = async () => {
     try {
-      const response = await fetch('API_ENDPOINT'); // Replace 'API_ENDPOINT' with the actual API endpoint to fetch the data
+      const response = await fetch('http://localhost:1337/api/users'); // Replace 'API_ENDPOINT' with the actual API endpoint to fetch the data
       const data = await response.json();
       setProfileData(data);
+      console.log(data)
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    fetchProfileData();
+  }, []);
 
   if (!profileData) {
     return <div>Loading...</div>;
@@ -23,15 +24,12 @@ const FarmersProfile = () => {
 
   return (
     <div>
-      <h2>Farmers Profile</h2>
-      <p>Name: {profileData.name}</p>
-      <p>Email: {profileData.email}</p>
-      <p>Address: {profileData.address}</p>
-      <p>Contact: {profileData.contact}</p>
-      <p>County: {profileData.county}</p>
-      <p>Sub-county: {profileData.subCounty}</p>
-      <p>Ward: {profileData.ward}</p>
-      <p>Location: {profileData.location}</p>
+      <h2 className='container-title'>Farmers Profile</h2>
+      <div>
+        {/* {data.map((user) => (
+          <p>{user.contact}</p>
+        ))} */}
+      </div>
     </div>
   );
 };

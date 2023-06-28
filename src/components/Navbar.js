@@ -29,7 +29,7 @@ const Navbar = () => {
                             </div>
                         </Link>
                         <button onClick={() => setOpen((prev) => !prev)} className=' sm:hidden text-2xl text-gray-900'>
-                            <HiMenuAlt3 />
+                            { !open ? <HiMenuAlt3 /> : <FaRegTimesCircle className="text-gray-200"/>}
                         </button>
                     </div>
 
@@ -47,13 +47,8 @@ const Navbar = () => {
                 </div>
 
                 {/* mobile-version */}
-                <div className={`${open ? "left-0 " : "left-[-100%]"} z-[100] sm:hidden absolute top-0 right-0 bottom-0  space-y-8 py-6 px-8 w-full min-h-full duration-300 ease-in-out bg-green-700 opacity-95`}>
-                    <div className="flex justify-end">
-                        <button onClick={() => setOpen((prev) => !prev)} className="sm:hidden text-2xl text-gray-200 text-right">
-                            <FaRegTimesCircle />
-                        </button> 
-                    </div>
-                    <ul className="flex flex-col items-center text-base font-medium space-y-8 text-gray-200">
+                <div className={`${open ? "left-0 " : "left-[-100%]"} z-[100] sm:hidden absolute top-0 right-0 bottom-0  space-y-8 py-6 px-8 w-[80%] min-h-full duration-300 ease-in-out bg-green-700 opacity-95`}>
+                    <ul className="flex flex-col text-base font-medium space-y-8 text-gray-200">
                         {navLinks.map((nav) => (
                             <li key={nav.id} onClick={() => setOpen((prev) => !prev)} className="navlink md:mx-4 mx-2 md:my-0 my-2">
                                 <Link to={nav.route}>

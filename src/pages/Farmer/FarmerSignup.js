@@ -1,112 +1,3 @@
-// import React, { useState } from 'react';
-
-// const FarmerSignup = () => {
-//   const [farmersName, setFarmersName] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [passwordDigest, setPasswordDigest] = useState('');
-//   const [farmerAddress, setFarmerAddress] = useState('');
-//   const [farmerContact, setFarmerContact] = useState('');
-//   const [farmerCounty, setFarmerCounty] = useState('');
-//   const [farmerSubCounty, setFarmerSubCounty] = useState('');
-//   const [farmerWard, setFarmerWard] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-
-//     const formData = {
-//       farmers_name: farmersName,
-//       email,
-//       password_digest: passwordDigest,
-//       farmer_address: farmerAddress,
-//       farmer_contact: farmerContact,
-//       farmer_county: farmerCounty,
-//       farmer_sub_county: farmerSubCounty,
-//       farmer_ward: farmerWard
-//     };
-
-//     fetch('http://127.0.0.1:3000/farmers', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(formData)
-//     })
-//       .then((response) => {
-//         if (response.ok) {
-//           // Form submission successful
-//           console.log('Form submitted successfully');
-//           // Reset form fields
-//           setFarmersName('');
-//           setEmail('');
-//           setPasswordDigest('');
-//           setFarmerAddress('');
-//           setFarmerContact('');
-//           setFarmerCounty('');
-//           setFarmerSubCounty('');
-//           setFarmerWard('');
-//         } else {
-//           // Form submission failed
-//           console.log('Form submission failed');
-//         }
-//       })
-//       .catch((error) => {
-//         console.error('Error submitting form:', error);
-//       });
-//   };
-
-//   return (
-//     <div>
-//       <h2>Farmer Signup</h2>
-//       <form onSubmit={handleSubmit}>
-//         <label>
-//           Farmer's Name:
-//           <input type="text" value={farmersName} onChange={(e) => setFarmersName(e.target.value)} />
-//         </label>
-//         <br />
-//         <label>
-//           Email:
-//           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-//         </label>
-//         <br />
-//         <label>
-//           Password:
-//           <input type="password" value={passwordDigest} onChange={(e) => setPasswordDigest(e.target.value)} />
-//         </label>
-//         <br />
-//         <label>
-//           Farmer Address:
-//           <input type="text" value={farmerAddress} onChange={(e) => setFarmerAddress(e.target.value)} />
-//         </label>
-//         <br />
-//         <label>
-//           Farmer Contact:
-//           <input type="text" value={farmerContact} onChange={(e) => setFarmerContact(e.target.value)} />
-//         </label>
-//         <br />
-//         <label>
-//           Farmer County:
-//           <input type="text" value={farmerCounty} onChange={(e) => setFarmerCounty(e.target.value)} />
-//         </label>
-//         <br />
-//         <label>
-//           Farmer Sub-County:
-//           <input type="text" value={farmerSubCounty} onChange={(e) => setFarmerSubCounty(e.target.value)} />
-//         </label>
-//         <br />
-//         <label>
-//           Farmer Ward:
-//           <input type="text" value={farmerWard} onChange={(e) => setFarmerWard(e.target.value)} />
-//         </label>
-//         <br />
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default FarmerSignup;
-
-
 import React, { useState } from 'react';
 
 const FarmerSignup = () => {
@@ -225,52 +116,119 @@ const FarmerSignup = () => {
 
   return (
     <div>
-      <h2>{isSignUp ? 'Sign Up' : 'Login'}</h2>
+      <h2 className='container-title'>{isSignUp ? 'Sign Up' : 'Login'}</h2>
       <form onSubmit={handleFormSubmit}>
         {isSignUp && (
           <div>
-            <label>
-              Name:
-              <input type="text" name="name" value={name} onChange={handleInputChange} required />
-            </label>
-            <br />
-            <label>
-              Address:
-              <input type="text" name="address" value={address} onChange={handleInputChange} required />
-            </label>
-            <br />
-            <label>
-              County:
-              <input type="text" name="county" value={county} onChange={handleInputChange} required />
-            </label>
-            <br />
-            <label>
-              Ward:
-              <input type="text" name="ward" value={ward} onChange={handleInputChange} required />
-            </label>
-            <br />
-            <label>
-              Location:
-              <input type="text" name="location" value={location} onChange={handleInputChange} required />
-            </label>
-            <br />
+            <div>
+              <label className='label'>
+                Name:
+              </label>
+              <input 
+                type="text" 
+                name="name" 
+                value={name} 
+                className='input input-success'
+                onChange={handleInputChange} 
+                required 
+              />
+            </div>
+            <div>
+              <label className='label'>
+                Address:
+              </label>
+              <input 
+                type="text" 
+                name="address" 
+                value={address} 
+                className='input input-success'
+                onChange={handleInputChange} 
+                required 
+              />
+            </div>
+            <div>
+              <label className='label'>
+                County:
+              </label>
+              <input 
+                type="text" 
+                name="county" 
+                value={county} 
+                className='input input-success'
+                onChange={handleInputChange} 
+                required 
+              />
+            </div>
+            <div>
+              <label className='label'>
+                Ward:
+              </label>
+              <input 
+                type="text" 
+                name="ward" 
+                value={ward} 
+                className='input input-success'
+                onChange={handleInputChange} 
+                required 
+              />
+            </div>
+            <div>
+              <label className='label'>
+                Location:
+              </label>
+              <input 
+                type="text" 
+                name="location" 
+                value={location} 
+                className='input input-success'
+                onChange={handleInputChange} 
+                required 
+              />
+            </div>
           </div>
         )}
-        <label>
-          Email:
-          <input type="email" name="email" value={email} onChange={handleInputChange} required />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" name="password" value={password} onChange={handleInputChange} required />
-        </label>
-        <br />
-        <button type="submit">{isSignUp ? 'Sign Up' : 'Login'}</button>
+          <div>
+              <label className='label'>
+                  Email:
+              </label>
+              <input
+                  type="email"
+                  name="email"
+                  className='input input-success'
+                  value={email}
+                  onChange={handleInputChange}
+                  />
+          </div>
+          <div>
+              <label className='label'>
+                  Password:
+              </label>
+              <input
+                      className='input input-success'
+                      type="password"
+                      name="password"
+                      value={password}
+                      onChange={handleInputChange}
+                  />
+          </div>
+
+        <button 
+          type="submit"
+          className='btn btn-success mt-4'
+          >
+            {isSignUp ? 'Sign Up' : 'Login'}
+          </button>
       </form>
-      <p>
+      <p  
+        className='md:text-lg font-semibold'
+        >
         {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
-        <button onClick={toggleForm}>{isSignUp ? 'Login' : 'Sign Up'}</button>
+        <button 
+          onClick={toggleForm}
+          className='btn btn-error text-white'
+          >
+            {isSignUp ? 'Login' : 'Sign Up'}
+        </button>
       </p>
     </div>
   );
