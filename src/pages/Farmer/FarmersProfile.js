@@ -5,7 +5,7 @@ const FarmersProfile = () => {
 
   const fetchProfileData = async () => {
     try {
-      const response = await fetch('http://localhost:1337/api/users'); // Replace 'API_ENDPOINT' with the actual API endpoint to fetch the data
+      const response = await fetch('http://localhost:1337/api/users?populate=image'); // Replace 'API_ENDPOINT' with the actual API endpoint to fetch the data
       const data = await response.json();
       setProfileData(data);
       console.log(data)
@@ -25,10 +25,21 @@ const FarmersProfile = () => {
   return (
     <div>
       <h2 className='container-title'>Farmers Profile</h2>
-      <div>
-        {/* {data.map((user) => (
-          <p>{user.contact}</p>
-        ))} */}
+      <div className='profile-container'>
+        {profileData.map((user, index) => (
+          <div key={index} className='profile-card'>
+            <div className='profile-image'>
+              <img className='avatar' src={`http://localhost:1337${user.image.url}`} />  
+            </div>
+            <div className='profile-content'>
+              <p>{user.username}</p>
+              <p>{user.county}</p>
+              <p>{user.sub_county}</p>
+              <p>{user.contact}</p>
+            </div>
+          </div>
+        ))}
+        
       </div>
     </div>
   );
