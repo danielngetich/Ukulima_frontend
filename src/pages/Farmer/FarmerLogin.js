@@ -25,28 +25,37 @@
 //   };
 
 //   return (
-//     <form onSubmit={handleSubmit}>
-//       <label>
-//         Email:
-//         <input
-//           type="email"
-//           name="email"
-//           value={formData.email}
-//           onChange={handleChange}
-//         />
-//       </label>
-//       <br />
-//       <label>
-//         Password:
-//         <input
-//           type="password"
-//           name="password"
-//           value={formData.password}
-//           onChange={handleChange}
-//         />
-//       </label>
-//       <br />
-//       <button type="submit">Log In</button>
+//     <form onSubmit={handleSubmit} className='form-container'>
+//         <div>
+//             <label className='label'>
+//                 Email:
+//             </label>
+//             <input
+//                 type="email"
+//                 name="email"
+//                 className='input input-success'
+//                 value={formData.email}
+//                 onChange={handleChange}
+//                 />
+//         </div>
+//         <div>
+//             <label className='label'>
+//                 Password:
+//             </label>
+//             <input
+//                     className='input input-success'
+//                     type="password"
+//                     name="password"
+//                     value={formData.password}
+//                     onChange={handleChange}
+//                 />
+//         </div>
+//         <button
+//             className='btn btn-success ' 
+//             type="submit"
+//             >
+//                 Log In
+//         </button>
 //     </form>
 //   );
 // };

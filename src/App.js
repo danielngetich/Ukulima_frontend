@@ -17,17 +17,20 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path='/' element={ <Home /> } />
-          <Route path='/farmerlogin' element={ <FarmerLogin /> } />
-          <Route path='/farmersignup' element={ <FarmerSignup /> } />
-          <Route path='/farmersprofile' element={ <FarmersProfile /> } />
-          <Route path='/mycrops' element={ <MyCrops /> } />
-          <Route path='/mysales' element={ <MySells /> } />
-          <Route path='/myrecords' element={ <MyRecords /> } />
-          <Route path='/farmproduce' element={ <FarmProduceSales /> } />
-          <Route path='/farminghistory' element={ <MyFarmingHistory /> } />
-        </Routes>
+        <div className='md:m-16 m-6'>
+          <Routes>
+            <Route path='/' element={ <Home /> } />
+            <Route path='/farmerlogin' element={ <FarmerLogin /> } />
+            <Route path='/farmersignup' element={ <FarmerSignup /> } />
+            <Route path='/farmersprofile' element={ <FarmersProfile /> } />
+            <Route path='/mycrops' element={ <MyCrops /> } />
+            <Route path='/mysales' element={ <MySells /> } />
+            <Route path='/myrecords' element={ <MyRecords /> } />
+            <Route path='/farmproduce' element={ <FarmProduceSales /> } />
+            <Route path='/farminghistory' element={ <MyFarmingHistory /> } />
+          </Routes>
+        </div>
+        
         <Footer />
       </BrowserRouter>
     </div>

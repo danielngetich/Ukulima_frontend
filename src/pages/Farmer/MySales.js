@@ -37,7 +37,7 @@ const MySells = ({ addProduct }) => {
   return (
     <div className='md:m-16 my-8 mx-4'>
       <h2 className='container-title md:text-center md:mb-8 mb-4'>Sell Your Farm Produce</h2>
-      <form className='flex flex-col md:items-center space-y-4 ' onSubmit={handlePostProduct}>
+      <form className='form-container' onSubmit={handlePostProduct}>
         <div>
           <label className="label">
             Product Name:

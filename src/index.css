@@ -7,4 +7,8 @@
     .container-title {
         @apply font-semibold md:text-2xl text-xl text-gray-800
     }
+
+    .form-container {
+        @apply flex flex-col items-start space-y-4
+    }
 }
