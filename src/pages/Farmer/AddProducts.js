@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const MySells = ({ addProduct }) => {
+const AddProducts = ({ addProduct }) => {
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productImage, setProductImage] = useState(null);
@@ -86,4 +86,4 @@ const MySells = ({ addProduct }) => {
   );
 };
 
-export default MySells;
+export default AddProducts;
