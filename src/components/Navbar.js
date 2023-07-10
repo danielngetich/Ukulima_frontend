@@ -8,19 +8,21 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     const navLinks = [
-        {id: 1,name: "Profile", route: "/farmersprofile"},
-        {id: 2,name:"My Crops", route: "/mycrops"},
-        {id: 3,name: "My records", route: "/myrecords"},
-        {id: 4,name: "My Sales", route: "/mysales"},
-        {id: 5,name: "Farmers Market", route: "/farmproduce"},
-        {id: 6,name: "Farming History", route: "/farminghistory"},
-        {id: 7,name: "Login", route: "/farmerlogin"},
-        {id: 8,name: "Signup", route: "/farmersignup"},
+        {id: 1, name: "Home", route: "/"},
+        {id: 2, name: "Shop", route: "/shop"},
+        {id: 3, name: "About", route: "/about"},
+        // {id: 1, name: "Profile", route: "/farmersprofile"},
+        // {id: 2, name:"My Crops", route: "/mycrops"},
+        // {id: 3, name: "My records", route: "/myrecords"},
+        // {id: 5, name: "Farmers Market", route: "/farmproduce"},
+        // {id: 6, name: "Farming History", route: "/farminghistory"},
+        {id: 7, name: "Login", route: "/farmerlogin"},
+        {id: 8, name: "Signup", route: "/farmersignup"},
     ]
 
     return ( 
         <>
-            <nav className="md:px-24 px-4 md:py-5 py-5 top-0 left-0 static z-[100] bg-green-600 shadow-xl"> 
+            <nav className="md:px-24 px-4 md:py-6 py-5 top-0 left-0 static z-[100] bg-green-600 shadow-xl"> 
                 <div className="md:flex justify-between items-center">
                     <div className="flex justify-between items-center">
                         <Link to='/' className="flex items-center justify-center    ">
