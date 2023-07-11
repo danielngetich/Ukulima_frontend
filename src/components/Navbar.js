@@ -27,7 +27,7 @@ const Navbar = () => {
                     <div className="flex justify-between items-center">
                         <Link to='/' className="flex items-center justify-center    ">
                             <div className="md:w-48 w-32 uppercase font-semibold md:text-xl">
-                                Ukulimma 
+                                Limma 
                             </div>
                         </Link>
                         <button onClick={() => setOpen((prev) => !prev)} className=' sm:hidden text-2xl text-gray-900'>
