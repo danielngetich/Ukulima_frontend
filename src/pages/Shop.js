@@ -5,7 +5,9 @@ const Shop = ({products}) => {
     return ( 
         <>
            <ShopHero />
-           <Products products={products} />
+           <div className="md:m-32 mx-6">
+               <Products products={products} />
+           </div>
         </>
      );
 }

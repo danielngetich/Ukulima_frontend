@@ -16,7 +16,8 @@ import Shop from './pages/Shop';
 import About from './pages/About';
 
 function App() {
-  const {data: products, loading, error} = UseFetch("https://dummyjson.com/products")
+  // const {data: products, loading, error} = UseFetch("https://dummyjson.com/products")
+  const {data: products, loading, error} = UseFetch("https://fakestoreapi.com/products")
   // const products = items.products
   // console.log(products)
 

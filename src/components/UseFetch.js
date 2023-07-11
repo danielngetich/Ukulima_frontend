@@ -9,10 +9,15 @@ const UseFetch = (url) => {
     useEffect(() => {
         axios.get(url)
         .then((res) => {
-            const items = res.data
-            setData(items)
-            setLoading(false)
-            setError(false)
+            if (res.status === 200) {
+                const items = res.data
+                console.log(items)
+                setData(items)
+                setLoading(false)
+                setError(false)
+            } else {
+               console.error('Request made was a bad request. Check agein!') 
+            }
         })
         .catch((err) => {
             console.log(err)
